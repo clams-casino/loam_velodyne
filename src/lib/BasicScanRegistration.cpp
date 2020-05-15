@@ -348,7 +348,7 @@ void BasicScanRegistration::setScanBuffersFor(const size_t& startIdx, const size
         float weighted_distance = std::sqrt(calcSquaredDiff(point, nextPoint, depth1 / depth2)) / depth1;
 
         if (weighted_distance < 0.1) {
-          std::fill_n(&_scanNeighborPicked[i - startIdx + 1], _config.curvatureRegion + 1, 1);
+          std::fill_n(&_scanNeighborPicked[i - startIdx + 1], _config.curvatureRegion, 1);
         }
       }
     }
